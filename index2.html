@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Instagram Followers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="icon" href="fv.png" type="image/x-icon">
+
+    <!-- Custom Styling for Instagram Profile Display -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .instagram-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .instagram-info h4 {
+            font-size: 24px;
+            color: #ff0084;
+            margin-bottom: 10px;
+        }
+
+        .profile-box {
+            background-color: #e9f7fd;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #bce0fd;
+            color: #31708f;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .profile-url {
+            color: #0069d9;
+            font-size: 18px;
+            text-decoration: underline;
+            word-wrap: break-word;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .profile-box:hover {
+            background-color: #bce0fd;
+            border-color: #007bff;
+            cursor: pointer;
+        }
+
+        .profile-url:hover {
+            color: #0056b3;
+        }
+
+        .recharge-container {
+            margin: 50px auto;
+            max-width: 600px;
+        }
+
+        .plan-card {
+            border-radius: 30px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 30px;
+            background-color: #fff;
+            box-shadow: 1px 2px 10px 10px rgba(255, 3, 163, 0.1);
+        }
+
+        .plan-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            margin-left: 10px;
+        }
+
+        .recharge-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0084;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .recharge-btn:hover {
+            background-color: #91004b;
+        }
+/* Header Styles */
+.header {
+    background-color: #ffffff;
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-icon, .profile-icon {
+    font-size: 20px;
+    color: #ff0084;
+}
+
+.logo img {
+    height: 50px;
+    padding: 10px;
+}
+/* Product Section */
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.product-box {
+  background: white;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 1px 2px 10px 10px rgba(255, 0, 174, 0.1);
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+.offer-icon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #fd1d1d;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 0, 195, 0.2);
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.price {
+  margin: 10px 0;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1rem;
+}
+
+.discounted-price {
+  color: #16a316;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.buy-now {
+  background: #679cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buy-now:hover {
+  background: #fd1d1d;
+}
+/* Footer Styles */
+.footer {
+  background-color: #fafafa;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #8e8e8e;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer a {
+  color: #00ff08;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer .owners {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff007b;
+  text-transform: capitalize;
+  margin-top: 15px;
+}
+
+.footer .owners span {
+  color: #0095f6; /* Instagram blue */
+  font-style: italic;
+}
+
+.footer .special-text {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.footer .special-text a {
+  color: #999;
+}
+
+.footer .special-text a:hover {
+  color: #0095f6;
+}
+.banner {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+.timer-box {
+            width: 100%;
+            background-color: #e0f7fa;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .timer {
+            font-size: 18px;
+            color: #ff0084;
+        }
+    </style>
+</head>
+<!-- Header -->
+<div class="header">
+    <div class="menu-icon"><i class="fas fa-bars"></i></div>
+    <div class="logo"><img src="logo.png" alt="img 1"></div>
+    <div class="profile-icon"><i class="fas fa-user-circle"></i></div>
+</div>
+
+<section class="offer-section">
+  <img src="sankranthi.jpg" alt="Offer Banner" class="banner">
+</section>
+
+       
+    
+      <div class="timer-box">
+        <span>Special Offer Ends In:</span>
+        <div class="timer" id="time"></div>
+    </div>
+
+
+    <!-- Product Section -->
+  <section class="product">
+    <div class="product-box">
+      <div class="offer-icon">
+        <i class="fas fa-tag"></i> Special Offer
+      </div>
+      <img src="verify.png" alt="Varification Tick" class="product-image">
+      <h3 class="product-name">Instagram Varification Tick</h3>
+      <div class="price">
+        <span class="original-price">₹650</span>
+        <span class="discounted-price">₹299</span>
+      </div>
+      <button class="recharge-btn" onclick="handleFollowers()">Get blue tik</button>
+        </div>
+
+  </section>
+     <!-- Product Section -->
+     <section class="product">
+        <div class="product-box">
+          <div class="offer-icon">
+            <i class="fas fa-tag"></i> Special Offer
+          </div>
+          <img src="followers.png" alt="Varification Tick" class="product-image">
+          <h3 class="product-name">COMBO PACK ( 10k follower + 2k like for all post )</h3>
+          <div class="price">
+            <span class="original-price">₹1950</span>
+            <span class="discounted-price">₹285</span>
+          </div>
+          <button class="recharge-btn" onclick="handleFollowers()">Order now</button>
+            </div>
+    
+      </section>
+
+        <!-- Plan 0: 5k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:5k ✅🔥</span>
+                <span class="old-price">₹1399</span>
+            </div>
+            <p>Price: ₹99</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+
+        <!-- Plan 1: 10k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:10k ✅🔥</span>
+                <span class="old-price">₹1599</span>
+            </div>
+            <p>Price: ₹180</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 2k like & 5k views ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+        
+         <!-- Plan 2: 15k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:15k ✅🔥</span>
+                <span class="old-price">₹2199</span>
+            </div>
+            <p>Price: ₹240</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 2k like & 5k views + 1k follower ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 3: 20k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:20k ✅🔥</span>
+                <span class="old-price">₹2899</span>
+            </div>
+            <p>Price: ₹280</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 3k like & 7k views ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 4: 25k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:25k ✅🔥</span>
+                <span class="old-price">₹3199</span>
+            </div>
+            <p>Price: ₹299</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 5k like & 9k views ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+        
+         <!-- Plan 5: 30k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:30k ✅🔥</span>
+                <span class="old-price">₹3999</span>
+            </div>
+            <p>Price: ₹390</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 5k like & 10k views + 3k follower ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 6: 35k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:35k ✅🔥</span>
+                <span class="old-price">₹3399</span>
+            </div>
+            <p>Price: ₹450</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 2k like & 5k views + 100 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 7: 40k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:40k ✅🔥</span>
+                <span class="old-price">₹3799</span>
+            </div>
+            <p>Price: ₹520</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 10k like & 10k views + 5k Followers ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 8: 50k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:50k ✅🔥</span>
+                <span class="old-price">₹4799</span>
+            </div>
+            <p>Price: ₹628</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 5k like & 5k views + 5k follower + 200 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 9: 60k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:60k ✅🔥</span>
+                <span class="old-price">₹5499</span>
+            </div>
+            <p>Price: ₹738</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 7k like & 7k views + 7k follower + 400 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 10: 70k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:70k ✅🔥</span>
+                <span class="old-price">₹5999</span>
+            </div>
+            <p>Price: ₹818</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 8k like & 8k views + 8k follower + 500 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 11: 80k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:80k ✅🔥</span>
+                <span class="old-price">₹6699</span>
+            </div>
+            <p>Price: ₹930</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 9k like & 9k views + 9k follower + 600 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 12: 90k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:90k ✅🔥</span>
+                <span class="old-price">₹7399</span>
+            </div>
+            <p>Price: ₹1020</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 10k like & 10k views + 10k follower + 700 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+        <!-- Plan 13: 100k Followers -->
+        <div class="plan-card">
+            <div class="d-flex justify-content-between">
+                <span class="plan-header">Followers:100k ✅🔥</span>
+                <span class="old-price">₹8999</span>
+            </div>
+            <p>Price: ₹1130</p>
+            <p>Old & Real: 1-3 years old</p>
+            <p>Time: 3 to 4 minutes</p>
+            <p>Drop Rate: 0% No Drop</p>
+            <p>Extra benefit: 11k like & 11k views + 11k follower + 700 Comments ( for all post)</p>
+            <button class="recharge-btn" onclick="handleFollowers()">Create order</button>
+        </div>
+
+
+
+        <div class="footer">
+            <p class="owners">Owned by <span>Vikash Choudhary</span></p>
+            <p class="special-text">This offer is for a limited time so don't waste your time and select your deal on time</p>
+            <p>Customer support <a href="https://wa.me/+12634008056?text=Mujhe%20Help%20chahiye%20Mem" target="_blank">WhatsApp</a></p>
+          </div>
+
+
+        <script>
+            function handleFollowers() {
+                // Fetch the Instagram parameter dynamically
+                var instagram = "d";
+        
+                // Define the custom redirect URL
+                var redirectUrl = "index3.html";
+        
+                // Append Instagram URL only if it is provided
+                if (instagram) {
+                    redirectUrl += "?instagram=" + encodeURIComponent(instagram);
+                }
+        
+                // Redirect to the final URL
+                window.location.href = redirectUrl;
+            }
+
+            // 24 ghante ka timer
+        const duration = 24 * 60 * 60;
+        const display = document.querySelector('#time');
+        
+        // Timer Initialize
+        initializeTimer(duration, display);
+
+    function initializeTimer(duration, display) {
+        let endTime = sessionStorage.getItem('endTime');
+
+        // Agar endTime nahi hai to naya set karein
+        if (!endTime || Date.now() > endTime) {
+            endTime = Date.now() + duration * 1000;  // Naya 24 ghante ka set karein
+            sessionStorage.setItem('endTime', endTime);
+        }
+
+        updateTimer(endTime, display);
+    }
+
+    function updateTimer(endTime, display) {
+        let timerInterval = setInterval(function () {
+            let now = Date.now();
+            let remaining = Math.floor((endTime - now) / 1000);
+
+            if (remaining <= 0) {
+                // Timer 0 par aaya to fir se reset karein
+                sessionStorage.setItem('endTime', Date.now() + 24 * 60 * 60 * 1000);
+                remaining = 24 * 60 * 60;
+            }
+
+            let hours = parseInt(remaining / 3600, 10);
+            let minutes = parseInt((remaining % 3600) / 60, 10);
+            let seconds = parseInt(remaining % 60, 10);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000);
+    }
+
+        </script>
+
+
+    </script>
+</html>

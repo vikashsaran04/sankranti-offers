@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Followers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="fv.png" type="image/x-icon">
+    
+    <style>
+        /* Reset and Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .banner {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .timer-box {
+            width: 100%;
+            background-color: #e0f7fa;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .timer {
+            font-size: 18px;
+            color: #ff0084;
+        }
+
+        .recharge-form {
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 1px 2px 10px 10px rgb(16 0 191 / 10%);
+            max-width: 600px;
+        }
+
+        .recharge-form h3 {
+            font-size: 22px;
+            color: #ff0084;
+            margin-bottom: 15px;
+        }
+
+        .provider {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .provider-option {
+            flex: 1;
+            margin: 0 5px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .provider-option.selected {
+            background-color: #ff0084;
+            color: white;
+        }
+
+        .recharge-form input[type="text"], 
+        .recharge-form input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ff0084;
+            border-radius: 5px;
+        }
+
+        .recharge-form input[type="submit"] {
+            background-color: #ff0084;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .photo-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        .photo {
+            width: calc(50% - 10px);
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviews-section {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+        }
+
+        .review {
+            margin: 15px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer img {
+            width: 100%;
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 768px) {
+            .photo {
+                width: 100%;
+            }
+            
+            .recharge-form {
+                width: 90%;
+            }
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-icon, .profile-icon {
+            font-size: 20px;
+            color: #ff0084;
+        }
+        
+        .logo img {
+            height: 40px;
+            padding: 3px;
+        }
+
+        /* Offer section */
+.offer-section {
+    text-align: center;
+    padding: 1px;
+}
+
+.offer-section img {
+    max-width: 100%;
+    height: auto;
+}
+/* Review Section */
+.reviews-section {
+  text-align: center;
+  padding: 30px 0px;
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+.reviews-section h2, .reviews-section h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.review-list {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+
+.review {
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  box-shadow: 7px 7px 7px rgb(24 29 173 / 24%);
+}
+
+.review-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 30px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 10px 10px 7px rgb(24 29 173 / 24%);
+}
+
+.review-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #262626;
+}
+
+.review-form input[type="text"],
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  box-shadow: 6px 6px 6px rgba(255, 0, 221, 0.24);
+}
+
+.review-form button {
+  background-color: #ff0084;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.review-form button:hover {
+  background-color: #6f013a;
+}
+/* Input Field Styles */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 16px;
+}
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.recharge-form form');
+
+            form.onsubmit = function(event) {
+                event.preventDefault();
+                
+                const instagramURL = document.querySelector('#instagram').value;
+
+                if (instagramURL) {
+                    // Identify which button was clicked
+                    const submitButton = event.submitter;
+
+                    if (submitButton.value === "Get Followers") {
+                        window.location.href = `index2.html?url=${encodeURIComponent(instagramURL)}`;
+                    } 
+                    else if (submitButton.value === "Get Like & views") {
+                        window.location.href = `index4.html?url=${encodeURIComponent(instagramURL)}`;
+                    } 
+                    else if (submitButton.value === "Get views") {
+                        window.location.href = `index5.html?url=${encodeURIComponent(instagramURL)}`;
+                    }
+                }
+            };
+
+            // 24 ghante ka timer
+        const duration = 24 * 60 * 60;
+        const display = document.querySelector('#time');
+        
+        // Timer Initialize
+        initializeTimer(duration, display);
+    });
+
+    function initializeTimer(duration, display) {
+        let endTime = sessionStorage.getItem('endTime');
+
+        // Agar endTime nahi hai to naya set karein
+        if (!endTime || Date.now() > endTime) {
+            endTime = Date.now() + duration * 1000;  // Naya 24 ghante ka set karein
+            sessionStorage.setItem('endTime', endTime);
+        }
+
+        updateTimer(endTime, display);
+    }
+
+    function updateTimer(endTime, display) {
+        let timerInterval = setInterval(function () {
+            let now = Date.now();
+            let remaining = Math.floor((endTime - now) / 1000);
+
+            if (remaining <= 0) {
+                // Timer 0 par aaya to fir se reset karein
+                sessionStorage.setItem('endTime', Date.now() + 24 * 60 * 60 * 1000);
+                remaining = 24 * 60 * 60;
+            }
+
+            let hours = parseInt(remaining / 3600, 10);
+            let minutes = parseInt((remaining % 3600) / 60, 10);
+            let seconds = parseInt(remaining % 60, 10);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000);
+    }
+</script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+        <div class="logo"><img src="logo.png" alt="img 1"></div>
+        <div class="profile-icon"><i class="fas fa-user-circle"></i></div>
+    </div>
+
+    <section class="offer-section">
+        <img src="baner me.jpg" alt="Offer Banner" class="banner">
+    </section>
+
+    <div class="timer-box">
+        <span>Special Offer Ends In:</span>
+        <div class="timer" id="time"></div>
+    </div>
+
+    <section class="recharge-form">
+        <h3>Get Real Instagram Followers</h3>
+        <form>
+            <label for="instagram">Instagram Profile URL or Username:</label>
+            <input type="text" id="instagram" placeholder="https://www.instagram.com/yourprofile" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" placeholder="+91 XXXXXXXXXX" required>
+
+            <input type="submit" value="Get Followers">
+            <input type="submit" value="Get Like & views">
+            
+        </form>
+    </section>
+
+    <div class="photo-section">
+      <h2>👇 Trust of people 👇</h2>
+        <img src="Photo 0.jpg" alt="Photo 1" class="photo">
+        <img src="Photo 00.jpg" alt="Photo 1" class="photo">
+        <img src="Photo 1.jpg" alt="Photo 1" class="photo">
+        <img src="Photo 2.jpg" alt="Photo 2" class="photo">
+        <img src="Photo 3.jpg" alt="Photo 3" class="photo">
+        <img src="Photo 4.jpg" alt="Photo 4" class="photo">
+        <img src="Photo 5.jpg" alt="Photo 5" class="photo">
+        <img src="Photo 6.jpg" alt="Photo 6" class="photo">
+        <img src="Photo 7.jpg" alt="Photo 7" class="photo">
+        <img src="Photo 8.jpg" alt="Photo 8" class="photo">
+    </div>
+
+    <!-- Reviews Section (Visible only on Home Page) -->
+<section id="reviews" class="reviews-section">
+    <h2>Customer Comments</h2>
+    <div class="review-list">
+        <div class="review">
+            <p><strong>@arpita.kaur:</strong> ⭐⭐⭐⭐⭐ सर ब्लू टिक देने के लिए ध्यानवाद मार्केट में बहुत सारे फ्रोड चल रहे है लेकिन आप उन में से नहीं हो thenk u so much 🥰</p>
+        </div>
+        <div class="review">
+            <p><strong>@sunil_bishnoii2:</strong> ⭐⭐⭐⭐⭐ Thenks you sir mujhe blue tik mil gya only ₹299 wow 😳💞💗</p>
+        </div>
+        <div class="review">
+            <p><strong>सोनल:</strong> ⭐⭐⭐⭐⭐ थैंक यू सर मुझे 5000 फॉलोअर मिल गए 25 मिनट के अंदर-अंदर</p>
+        </div>
+        <div class="review">
+            <p><strong>Rahul bishnoi:</strong> ⭐⭐⭐⭐⭐ Sar mere ko 5000 folower mil Gaye vah bhi ekadam asali follower.</p>
+        </div>
+        <div class="review">
+            <p><strong>कीर्तिका:</strong> ⭐⭐⭐⭐⭐ थैंक यू सर आपकी सर्विस मुझे बहुत अच्छी लगी.</p>
+        </div>
+        <div class="review">
+            <p><strong>Vikash Verma:</strong> ⭐⭐⭐⭐⭐ Sar aapki service bahut acchi lagi Maine mere dost Ko bhi follow lene ke bare mein bataya</p>
+        </div>
+        <div class="review">
+            <p><strong>Ravi choudhary:</strong> ⭐⭐⭐⭐⭐ Received folowers instantly, very happy with instaBoost.</p>
+        </div>
+    </div>
+
+    <!-- Add Review Form (Visible only on Home Page) -->
+    <h3>Leave Your Review</h3>
+    <form class="review-form" onsubmit="addReview(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your name" required>
+        
+        <label for="rating">Rating:</label>
+        <select id="rating">
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+        </select>
+        
+        <label for="comment">Comment:</label>
+        <textarea id="comment" rows="3" placeholder="Write your review here..." required></textarea>
+        
+        <button type="submit">Submit Review</button>
+    </form>
+</section>
+</section>
+
+    <footer>
+        <img src="google_pay_footer.webp" alt="Footer Image">
+    </footer>
+
+</body>
